@@ -38,11 +38,11 @@ body{
 
 img{max-width:100%;height:auto;display:block}
 
-.page{
-  max-width:900px; /* 🔧 Increased container width so the logo can scale larger */
+.container{
+  max-width:600px; /* 🔧 Container max width */
   width:100%;
   margin:0 auto;
-  padding:24px; /* 🔧 Page padding */
+  padding:16px; /* 🔧 Page padding */
   display:flex;
   flex-direction:column;
   gap:var(--spacing-section); /* 🔧 Space between blocks */
@@ -60,20 +60,20 @@ img{max-width:100%;height:auto;display:block}
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:14px; /* 🔧 Gap between the two logos */
+  gap:12px; /* 🔧 Gap between the two logos */
   flex-wrap:wrap;
 }
 
 .logo{
   display:block;
-  width:100%; /* 🔧 Stretch across the header card */
-  max-width:none; /* 🔧 Allow full container width */
-  height:clamp(200px, 48vw, 420px); /* 🔧 Lower height to reduce vertical space */
+  width:48%; /* 🔧 Each logo share width on desktop; adjusts via media queries */
+  max-width:260px; /* 🔧 Cap logo width */
+  height:auto; /* 🔧 Let image set height */
   object-fit:contain; /* 🔧 Preserve aspect ratio */
   background-color:var(--color-white); /* 🔧 Logo background */
   border:1px solid var(--color-border); /* 🔧 Logo border */
   border-radius:10px; /* 🔧 Logo corner radius */
-  padding:8px; /* 🔧 Slightly more padding for clearer edges */
+  padding:10px; /* 🔧 Logo padding */
   box-shadow:var(--shadow-soft);
 }
 
@@ -84,16 +84,24 @@ img{max-width:100%;height:auto;display:block}
   letter-spacing:0.2px;
 }
 
+.company-name{
+  font-size:clamp(1.8rem, 2.5vw + 1rem, 3rem); /* 🔧 Company name size */
+  font-weight:700;
+  text-align:center;
+  margin-top:1rem; /* 🔧 Company name top margin */
+  color:var(--color-black); /* 🔧 Brand color */
+}
+
 h1,h2{
-  font-size:clamp(1.3rem, 1.6vw + 0.9rem, 2.1rem); /* 🔧 Adjust heading size here (smaller on desktop) */
-  line-height:1.28; /* 🔧 Adjust heading line-height here */
+  font-size:clamp(1.2rem, 2vw + 0.5rem, 2rem); /* 🔧 Heading size */
+  line-height:1.3; /* 🔧 Heading line-height */
   margin:0;
   color:var(--color-black); /* 🔧 Heading color */
 }
 
 p, a, button{
-  font-size:clamp(0.98rem, 1.2vw + 0.45rem, 1.12rem); /* 🔧 Adjust body text size here (smaller on desktop) */
-  line-height:1.5; /* 🔧 Adjust body line-height here */
+  font-size:clamp(1rem, 1.5vw + 0.5rem, 1.25rem); /* 🔧 Body text size */
+  line-height:1.5; /* 🔧 Body line-height */
 }
 
 .muted{
@@ -105,7 +113,7 @@ p, a, button{
   background:var(--color-panel); /* 🔧 Section background color */
   border:1px solid var(--color-border); /* 🔧 Section border color */
   border-radius:var(--radius-card); /* 🔧 Section corner radius */
-  padding:24px; /* 🔧 Section padding */
+  padding:20px; /* 🔧 Section padding */
   box-shadow:var(--shadow-soft);
 }
 
@@ -143,18 +151,16 @@ p, a, button{
 .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(230,0,0,0.28);} /* 🔧 Button hover shadow */
 .btn.primary:active{transform:translateY(0);} /* 🔧 Button active state */
 
-.contact{
-  text-align:center;
-}
+.call{ text-align:center; }
 
-.contact-grid{
-  margin-top:16px;
+.call-grid{
+  margin-top:16px; /* 🔧 Space above call grid */
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); /* 🔧 Controls icons per row */
-  gap:16px; /* 🔧 Gap between icons */
+  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); /* 🔧 Call cards per row */
+  gap:16px; /* 🔧 Gap between call cards */
 }
 
-.contact-card{
+.call-card{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -162,57 +168,50 @@ p, a, button{
   gap:10px; /* 🔧 Space between icon and label */
   padding:16px; /* 🔧 Card padding */
   border-radius:12px; /* 🔧 Card radius */
-  color:var(--color-white); /* 🔧 Default icon/text color on dark tiles */
   text-decoration:none;
   box-shadow:var(--shadow-soft);
   transition:transform 0.16s ease, box-shadow 0.16s ease;
+  background:var(--color-panel); /* 🔧 Card background */
+  border:1px solid var(--color-border); /* 🔧 Card border */
+  color:var(--color-black); /* 🔧 Text color */
 }
 
-.contact-icon{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));} /* 🔧 Icon size */
-.contact-card .label{font-weight:600;}
+.call-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.16);} /* 🔧 Hover motion/shadow */
+.call-card:active{transform:translateY(-1px);} /* 🔧 Active motion */
 
-.contact-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.16);} /* 🔧 Hover motion/shadow */
-.contact-card:active{transform:translateY(-1px);} /* 🔧 Active motion */
+.call-card.phone .label{color:var(--color-red);} /* 🔧 Phone label color */
+.call-card.whatsapp .label{color:#25D366;} /* 🔧 WhatsApp label color */
 
-.contact-card.phone{background:var(--color-red);} /* 🔧 Phone tile color */
-.contact-card.whatsapp{background:#25D366;} /* 🔧 WhatsApp brand green */
-.contact-card.facebook{background:#1877F2;} /* 🔧 Facebook blue */
-.contact-card.instagram{background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);} /* 🔧 Instagram gradient */
-.contact-card.tiktok{background:#000000;} /* 🔧 TikTok black */
+.call-icon{width:48px;height:48px;object-fit:contain;} /* 🔧 Call icon size */
+.call-card .label{font-weight:700;} /* 🔧 Label weight */
 
 .social{
   text-align:center;
 }
 
-.social-icons{
-  margin-top:16px;
+.icon-grid{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:14px; /* 🔧 Gap between social icons */
+  gap:16px; /* 🔧 Icon spacing */
+  margin-top:16px; /* 🔧 Space above icons */
 }
 
 .social-icon{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0; /* 🔧 No outer box */
-  color:inherit; /* 🔧 Inherit color */
-  background:transparent; /* 🔧 Remove background */
+  font-size:2rem; /* 🔧 Icon size */
+  padding:12px; /* 🔧 Icon padding */
+  border-radius:8px; /* 🔧 Icon radius */
+  background-color:transparent; /* 🔧 Icon background (set to #f5f5f5 if desired) */
+  color:var(--color-black); /* 🔧 Icon color */
   text-decoration:none;
-  box-shadow:none; /* 🔧 Remove shadow */
-  transition:transform 0.14s ease, opacity 0.14s ease;
+  transition:transform 0.2s ease; /* 🔧 Hover motion */
 }
 
-.social-icon i{font-size:1.6rem;} /* 🔧 Icon size */
-
-.social-icon:hover{transform:translateY(-2px);opacity:0.9;} /* 🔧 Hover effect without box */
-.social-icon:active{transform:translateY(-1px);opacity:1;} /* 🔧 Active effect */
+.social-icon:hover{transform:scale(1.1);} /* 🔧 Hover scale */
 
 .social-icon.facebook{color:#1877F2;} /* 🔧 Facebook brand color */
 .social-icon.instagram{color:#dd2a7b;} /* 🔧 Instagram brand color */
 .social-icon.tiktok{color:#000000;} /* 🔧 TikTok brand color */
-.social-icon.whatsapp{color:#25D366;} /* 🔧 WhatsApp brand color */
 
 .site-footer{
   text-align:center;
@@ -253,33 +252,37 @@ p, a, button{
 
 @media (max-width:640px){
   .logo{
-    height:clamp(110px, 42vw, 200px); /* 🔧 Smaller logo on phones */
-    padding:0; /* 🔧 No padding so artwork fills area */
     width:100%;
+    max-width:100%;
+    height:auto;
+    padding:6px; /* 🔧 Light padding on phones */
   }
-  .contact-grid{grid-template-columns:repeat(2, minmax(0, 1fr));} /* 🔧 2 icons per row on small screens */
-  .contact-card{padding:14px;gap:8px;} /* 🔧 Slightly tighter cards on phones */
-  .contact-icon{width:32px;height:32px;} /* 🔧 Smaller icons on phones */
-  .social-icon i{font-size:1.4rem;} /* 🔧 Smaller social icons on phones */
-  .page{padding:16px;} /* 🔧 Page padding on phones */
+  .call-grid{grid-template-columns:repeat(2, minmax(0,1fr));gap:14px;} /* 🔧 Two call buttons on phones */
+  .call-card{padding:14px;gap:8px;} /* 🔧 Phone card padding */
+  .call-icon{width:44px;height:44px;} /* 🔧 Phone icon size */
+  .icon-grid{gap:14px;} /* 🔧 Social icon gap */
+  .social-icon{font-size:1.6rem;padding:10px;} /* 🔧 Social icon size on phones */
+  .container{padding:14px;} /* 🔧 Container padding on phones */
 }
 
 @media (min-width:641px) and (max-width:1023px){
-  .logo{height:clamp(180px, 38vw, 320px);padding:6px;} /* 🔧 Tablet logo sizing */
-  .page{padding:20px;} /* 🔧 Tablet padding */
-  .contact-grid{grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;} /* 🔧 3-up on tablets */
-  .contact-card{padding:16px;gap:10px;} /* 🔧 Tablet card spacing */
-  .contact-icon{width:34px;height:34px;} /* 🔧 Tablet icon size */
-  .social-icon i{font-size:1.5rem;} /* 🔧 Tablet social icon size */
+  .logo{width:60%;max-width:320px;height:auto;padding:8px;} /* 🔧 Tablet logo */
+  .container{padding:18px;} /* 🔧 Tablet padding */
+  .call-grid{grid-template-columns:repeat(2, minmax(0,1fr));gap:18px;} /* 🔧 Call layout tablet */
+  .call-card{padding:16px;gap:10px;} /* 🔧 Tablet card spacing */
+  .call-icon{width:46px;height:46px;} /* 🔧 Tablet icon size */
+  .icon-grid{gap:16px;} /* 🔧 Tablet social gap */
+  .social-icon{font-size:1.8rem;padding:12px;} /* 🔧 Tablet social icon size */
 }
 
 @media (min-width:1024px){
-  .logo{height:clamp(180px, 22vw, 300px);padding:8px;} /* 🔧 Desktop logo sizing trimmed */
-  .page{padding:24px;} /* 🔧 Desktop padding */
-  .contact-grid{grid-template-columns:repeat(3, minmax(0, 1fr));gap:16px;} /* 🔧 3-up on desktop tighter */
-  .contact-card{padding:14px;gap:9px;} /* 🔧 Desktop card spacing trimmed */
-  .contact-icon{width:36px;height:36px;} /* 🔧 Icon size trimmed on desktop */
-  .social-icon i{font-size:1.4rem;} /* 🔧 Desktop social icon size trimmed */
+  .logo{width:48%;max-width:260px;height:auto;padding:10px;} /* 🔧 Desktop logo */
+  .container{padding:20px;} /* 🔧 Desktop padding */
+  .call-grid{grid-template-columns:repeat(2, minmax(0,1fr));gap:18px;} /* 🔧 Call layout desktop */
+  .call-card{padding:16px;gap:10px;} /* 🔧 Desktop card spacing */
+  .call-icon{width:48px;height:48px;} /* 🔧 Desktop call icon */
+  .icon-grid{gap:16px;} /* 🔧 Desktop social gap */
+  .social-icon{font-size:1.8rem;padding:12px;} /* 🔧 Desktop social icon size */
 }
 
 @media (min-width:769px){

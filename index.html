@@ -11,45 +11,40 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <div id="loader" class="loader" role="status" aria-label="Loading Speyglo logo">
-    <img src="assets/images/L.svg" id="loader-logo" class="loader-logo" alt="Speyglo Automotive logo loading">
-  </div>
-
-  <main class="page" role="main">
+  <main class="container" role="main">
     <header class="site-header">
       <div class="logo-row" aria-label="Speyglo logos">
-        <!-- Swap this logo source if the primary Speyglo mark ever changes -->
-        <img class="logo" src="assets/images/L.svg" alt="Speyglo Automotive primary logo">
+        <!-- 🔧 Swap these logo sources if branding changes -->
+        <img class="logo" src="assets/images/L.svg" alt="Speyglo primary logo">
+        <img class="logo" src="assets/images/L.svg" alt="Client partner logo">
       </div>
-      <!-- Edit this tagline if messaging changes -->
+      <!-- 🔧 Update tagline text here -->
       <p class="tagline">Trusted Auto Care. Connect with Confidence.</p>
-      <h1>Contact Speyglo Automotive</h1>
+      <!-- 🔧 Company name styling controlled in CSS .company-name -->
+      <h1 class="company-name">Speyglo Automotive</h1>
     </header>
 
-    <section class="section contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Connect With Us</h2>
-      <p class="muted">Tap an icon to reach the right channel.</p>
-      <div class="contact-grid" role="list">
-        <a class="contact-card phone" href="tel:+94764089856" role="listitem" aria-label="Call Speyglo Automotive">
-          <img src="assets/icons/call.png" alt="Phone icon for calling" class="contact-icon">
-          <span class="label">Call</span>
+    <section class="section about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Speyglo Automotive</h2>
+      <!-- 🔧 Edit about text below -->
+      <p>
+        Speyglo Automotive is your trusted partner for expert vehicle repairs and detailing. If you’re seeing this page, your vehicle has been serviced by our team. We take pride in our craftsmanship and customer care. Connect with us below!
+      </p>
+    </section>
+
+    <section class="section call" aria-labelledby="call-heading">
+      <h2 id="call-heading">Call Us</h2>
+      <p class="muted">Tap to call or WhatsApp.</p>
+      <div class="call-grid" role="list">
+        <!-- 🔧 Update tel link and icon if needed -->
+        <a class="call-card phone" href="tel:+94764089856" role="listitem" aria-label="Call Speyglo Automotive">
+          <img src="assets/icons/call.png" alt="Phone icon" class="call-icon">
+          <span class="label">Phone</span>
         </a>
-        <a class="contact-card whatsapp" href="https://wa.me/+94764089856" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp Speyglo Automotive">
-          <img src="assets/icons/whatsapp.png" alt="WhatsApp icon" class="contact-icon">
+        <!-- 🔧 Update WhatsApp link and icon if needed -->
+        <a class="call-card whatsapp" href="https://wa.me/+94764089856" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp Speyglo Automotive">
+          <img src="assets/icons/whatsapp.png" alt="WhatsApp icon" class="call-icon">
           <span class="label">WhatsApp</span>
-        </a>
-        <a class="contact-card facebook" href="https://web.facebook.com/p/Speyglo-Automotive-100068931681894" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook page">
-          <img src="assets/icons/facebook.png" alt="Facebook icon" class="contact-icon">
-          <span class="label">Facebook</span>
-        </a>
-        <a class="contact-card instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram profile">
-          <img src="assets/icons/instagram.png" alt="Instagram icon" class="contact-icon">
-          <span class="label">Instagram</span>
-        </a>
-        <a class="contact-card tiktok" href="https://www.tiktok.com/@speygloautomotive" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="TikTok profile">
-          <img src="assets/icons/tiktok.png" alt="TikTok icon" class="contact-icon">
-          <span class="label">TikTok</span>
         </a>
       </div>
     </section>
@@ -57,7 +52,8 @@
     <section class="section social" aria-labelledby="social-heading">
       <h2 id="social-heading">Follow Us</h2>
       <p class="muted">Stay updated with our latest work.</p>
-      <div class="social-icons" role="list">
+      <div class="icon-grid" role="list">
+        <!-- 🔧 Update social links or icons as needed -->
         <a class="social-icon facebook" href="https://web.facebook.com/p/Speyglo-Automotive-100068931681894" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook">
           <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
         </a>
@@ -66,9 +62,6 @@
         </a>
         <a class="social-icon tiktok" href="https://www.tiktok.com/@speygloautomotive" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="TikTok">
           <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-        </a>
-        <a class="social-icon whatsapp" href="https://wa.me/+94764089856" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </a>
       </div>
     </section>
@@ -84,7 +77,7 @@
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.063315037763!2d80.0000000!3d6.0000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNi4wMDAwMDAgTiwgODAuMDAwMDAwIEU!5e0!3m2!1sen!2s!4v0000000000000"
           width="100%"
           height="300"
-          style="border:0; border-radius: 12px;"
+          style="border:0; border-radius: 8px;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -93,12 +86,13 @@
       </div>
       <div class="map-actions">
         <!-- 🔧 Update the href and button label to match your Google Maps place URL -->
-        <a class="btn primary" href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        <a class="map-button" href="https://maps.google.com/?q=YOUR_LOCATION" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
       </div>
     </section>
 
-    <section class="section about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Speyglo Automotive</h2>
+    <footer class="site-footer">
+      <p>© 2025 Speyglo Automotive. All rights reserved.</p>
+    </footer>
       <!-- Update this about text to reflect new services or messaging -->
       <p>
         Speyglo Automotive is your trusted partner for expert vehicle repairs and detailing. If you’re seeing this page, your vehicle has been serviced by our team. We take pride in our craftsmanship and customer care. Connect with us below!
