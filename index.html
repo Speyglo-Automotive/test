@@ -11,17 +11,20 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <img class="loader-logo" src="assets/images/L.svg" alt="Speyglo Automotive loading logo">
+  </div>
+
   <main class="container" role="main">
     <header class="site-header">
-      <div class="logo-row" aria-label="Speyglo logos">
-        <!-- 🔧 Swap these logo sources if branding changes -->
-        <img class="logo" src="assets/images/L.svg" alt="Speyglo primary logo">
-        <img class="logo" src="assets/images/L.svg" alt="Client partner logo">
+      <!-- 🔧 Company name text and style controlled in CSS -->
+      <h1 class="company-name">Speyglo Automotive</h1>
+      <div class="logo-wrap" aria-label="Speyglo logo">
+        <!-- 🔧 Swap logo source if branding changes -->
+        <img class="logo" src="assets/images/L.svg" alt="Speyglo Automotive logo">
       </div>
       <!-- 🔧 Update tagline text here -->
       <p class="tagline">Trusted Auto Care. Connect with Confidence.</p>
-      <!-- 🔧 Company name styling controlled in CSS .company-name -->
-      <h1 class="company-name">Speyglo Automotive</h1>
     </header>
 
     <section class="section about" aria-labelledby="about-heading">
@@ -35,16 +38,16 @@
     <section class="section call" aria-labelledby="call-heading">
       <h2 id="call-heading">Call Us</h2>
       <p class="muted">Tap to call or WhatsApp.</p>
-      <div class="call-grid" role="list">
-        <!-- 🔧 Update tel link and icon if needed -->
-        <a class="call-card phone" href="tel:+94764089856" role="listitem" aria-label="Call Speyglo Automotive">
-          <img src="assets/icons/call.png" alt="Phone icon" class="call-icon">
-          <span class="label">Phone</span>
+      <div class="icon-row" role="list">
+        <!-- 🔧 Update tel link here -->
+        <a class="icon-link" href="tel:+94764089856" role="listitem" aria-label="Call Speyglo Automotive">
+          <img class="icon-img" src="assets/icons/call.png" alt="Call icon">
+          <span class="icon-label">Phone</span>
         </a>
-        <!-- 🔧 Update WhatsApp link and icon if needed -->
-        <a class="call-card whatsapp" href="https://wa.me/+94764089856" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp Speyglo Automotive">
-          <img src="assets/icons/whatsapp.png" alt="WhatsApp icon" class="call-icon">
-          <span class="label">WhatsApp</span>
+        <!-- 🔧 Update WhatsApp link here -->
+        <a class="icon-link" href="https://wa.me/+94764089856" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp Speyglo Automotive">
+          <img class="icon-img" src="assets/icons/whatsapp.png" alt="WhatsApp icon">
+          <span class="icon-label">WhatsApp</span>
         </a>
       </div>
     </section>
@@ -53,15 +56,18 @@
       <h2 id="social-heading">Follow Us</h2>
       <p class="muted">Stay updated with our latest work.</p>
       <div class="icon-grid" role="list">
-        <!-- 🔧 Update social links or icons as needed -->
-        <a class="social-icon facebook" href="https://web.facebook.com/p/Speyglo-Automotive-100068931681894" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+        <!-- 🔧 Update social links as needed -->
+        <a class="social-icon" href="https://web.facebook.com/p/Speyglo-Automotive-100068931681894" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook">
+          <img class="social-img" src="assets/icons/facebook.png" alt="Facebook">
+          <span class="social-label">Facebook</span>
         </a>
-        <a class="social-icon instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        <a class="social-icon" href="https://www.instagram.com/speygloautomotive" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram">
+          <img class="social-img" src="assets/icons/instagram.png" alt="Instagram">
+          <span class="social-label">Instagram</span>
         </a>
-        <a class="social-icon tiktok" href="https://www.tiktok.com/@speygloautomotive" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="TikTok">
-          <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+        <a class="social-icon" href="https://www.tiktok.com/@speygloautomotive" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="TikTok">
+          <img class="social-img" src="assets/icons/tiktok.png" alt="TikTok">
+          <span class="social-label">TikTok</span>
         </a>
       </div>
     </section>
@@ -91,17 +97,7 @@
     </section>
 
     <footer class="site-footer">
-      <p>© 2025 Speyglo Automotive. All rights reserved.</p>
-    </footer>
-      <!-- Update this about text to reflect new services or messaging -->
-      <p>
-        Speyglo Automotive is your trusted partner for expert vehicle repairs and detailing. If you’re seeing this page, your vehicle has been serviced by our team. We take pride in our craftsmanship and customer care. Connect with us below!
-      </p>
-    </section>
-
-    <footer class="site-footer">
-      <!-- 🔧 Update year or message as needed -->
-      <small>© <span id="year"></span> Speyglo Automotive. All rights reserved.</small>
+      <p>© <span id="year">2025</span> Speyglo Automotive. All rights reserved.</p>
     </footer>
   </main>
 
